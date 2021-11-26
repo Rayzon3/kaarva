@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kaarva/login.dart';
 import 'package:kaarva/main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -21,11 +20,7 @@ class _SplashState extends State<Splash> {
   _navigateToHome() async {
     await Future.delayed(Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (context) => const MyHomePage(
-                  title: "Kaarva",
-                )));
+        context, MaterialPageRoute(builder: (context) => const loginPage()));
   }
 
   @override
