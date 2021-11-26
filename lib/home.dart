@@ -9,10 +9,26 @@ class homePage extends StatefulWidget {
 
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
+
+  final pages = [
+    Center(
+      child: Text(
+        "Page to create ride",
+        style: TextStyle(color: Color(0xff2DF6AE), fontSize: 20),
+      ),
+    ),
+    Center(
+        child: Text(
+      "Page to find a ride",
+      style: TextStyle(color: Color(0xff2DF6AE), fontSize: 20),
+    )),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff243443),
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
         selectedItemColor: Color(0xff2DF6AE),
@@ -22,11 +38,11 @@ class _homePageState extends State<homePage> {
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.book_online),
-              label: "Home",
+              label: "Create a ride",
               backgroundColor: Color(0xff243443)),
           BottomNavigationBarItem(
               icon: Icon(Icons.local_taxi),
-              label: "Car",
+              label: "Find a ride",
               backgroundColor: Color(0xff243443))
         ],
       ),
