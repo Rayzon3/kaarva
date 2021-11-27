@@ -11,17 +11,30 @@ class _homePageState extends State<homePage> {
   int currentIndex = 0;
 
   final pages = [
-    Center(
-      child: Text(
-        "Page to create ride",
-        style: TextStyle(color: Color(0xff2DF6AE), fontSize: 20),
+    Scaffold(
+      backgroundColor: const Color(0xff243443),
+      appBar: AppBar(
+        title: Text("Page to create ride"),
+      ),
+      body: Center(
+        child: Text(
+          " Yo ",
+          style: TextStyle(color: Color(0xff2DF6AE)),
+        ),
       ),
     ),
-    Center(
+    Scaffold(
+      backgroundColor: const Color(0xff243443),
+      appBar: AppBar(
+        title: Text("Page to find ride"),
+      ),
+      body: Center(
         child: Text(
-      "Page to find a ride",
-      style: TextStyle(color: Color(0xff2DF6AE), fontSize: 20),
-    )),
+          " Yo YO",
+          style: TextStyle(color: Color(0xff2DF6AE)),
+        ),
+      ),
+    ),
   ];
 
   @override
