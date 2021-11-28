@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "558405379504",
+    "project_id": "kaarva-db",
+    "storage_bucket": "kaarva-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558405379504:android:914f006fb905a1f9306275",
+        "android_client_info": {
+          "package_name": "com.example.kaarva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558405379504-f4a4nck3p1c65vie2aoplhiduok86esp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kaarva",
+            "certificate_hash": "47bb39b7817a934d8d5b15858983e81cf2083e44"
+          }
+        },
+        {
+          "client_id": "558405379504-3flo9ebikmokom3re5i10c4eidnagd2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaOyUd1o4hX8p8azHvbRlyjdGc5KwxLaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558405379504-3flo9ebikmokom3re5i10c4eidnagd2i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
