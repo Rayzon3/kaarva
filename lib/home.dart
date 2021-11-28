@@ -12,26 +12,47 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
 
+  Widget buildToGoLocation() => const TextField(
+        style: TextStyle(color: Colors.white),
+        decoration: InputDecoration(
+          labelText: "Where To ?",
+          border: OutlineInputBorder(),
+        ),
+      );
+
   final pages = [
     //Create Ride Page
     Scaffold(
-      backgroundColor: const Color(0xff243443),
-      appBar: AppBar(
-        title: const Text(
-          "Page to create ride",
-          style: TextStyle(
-            color: Color(0xff243443),
+        backgroundColor: const Color(0xff243443),
+        appBar: AppBar(
+          title: const Text(
+            "Create a Ride",
+            style: TextStyle(
+              color: Color(0xff243443),
+            ),
           ),
+          backgroundColor: const Color(0xff2DF6AE),
         ),
-        backgroundColor: const Color(0xff2DF6AE),
-      ),
-      body: const Center(),
-    ),
+        body: ListView(
+          padding: const EdgeInsets.all(16),
+          children: const [
+            TextField(
+              style: TextStyle(color: Color(0xff243443)),
+              decoration: InputDecoration(
+                labelText: "Where to?",
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 16),
+          ],
+        )),
     Scaffold(
       backgroundColor: const Color(0xff243443),
       appBar: AppBar(
         title: const Text(
-          "Page to find ride",
+          "Find a Ride",
           style: TextStyle(
             color: Color(0xff243443),
           ),
