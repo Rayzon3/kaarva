@@ -12,14 +12,6 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
 
-  Widget buildToGoLocation() => const TextField(
-        style: TextStyle(color: Colors.white),
-        decoration: InputDecoration(
-          labelText: "Where To ?",
-          border: OutlineInputBorder(),
-        ),
-      );
-
   final pages = [
     //Create Ride Page
     Scaffold(
