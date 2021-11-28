@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class homePage extends StatefulWidget {
   const homePage({Key? key}) : super(key: key);
 
@@ -7,28 +8,37 @@ class homePage extends StatefulWidget {
   _homePageState createState() => _homePageState();
 }
 
+// ignore: camel_case_types
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
 
   final pages = [
+    //Create Ride Page
     Scaffold(
       backgroundColor: const Color(0xff243443),
       appBar: AppBar(
-        title: Text("Page to create ride"),
-      ),
-      body: Center(
-        child: Text(
-          " Yo ",
-          style: TextStyle(color: Color(0xff2DF6AE)),
+        title: const Text(
+          "Page to create ride",
+          style: TextStyle(
+            color: Color(0xff243443),
+          ),
         ),
+        backgroundColor: const Color(0xff2DF6AE),
       ),
+      body: const Center(),
     ),
     Scaffold(
       backgroundColor: const Color(0xff243443),
       appBar: AppBar(
-        title: Text("Page to find ride"),
+        title: const Text(
+          "Page to find ride",
+          style: TextStyle(
+            color: Color(0xff243443),
+          ),
+        ),
+        backgroundColor: const Color(0xff2DF6AE),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           " Yo YO",
           style: TextStyle(color: Color(0xff2DF6AE)),
@@ -44,7 +54,7 @@ class _homePageState extends State<homePage> {
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
-        selectedItemColor: Color(0xff2DF6AE),
+        selectedItemColor: const Color(0xff2DF6AE),
         unselectedItemColor: Colors.white,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
