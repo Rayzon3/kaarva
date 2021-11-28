@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kaarva/home.dart';
 
 // ignore: camel_case_types
@@ -16,16 +17,23 @@ class _loginPageState extends State<loginPage> {
     return Scaffold(
       backgroundColor: const Color(0xff243443),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (_) => const homePage()));
-          },
-          child: const Text("Login with Google"),
-          style: ElevatedButton.styleFrom(
-              primary: const Color(0xff2DF6AE),
-              onPrimary: const Color(0xff243443)),
-        ),
+        child: ElevatedButton.icon(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => const homePage()));
+            },
+            icon: const FaIcon(
+              FontAwesomeIcons.google,
+              color: Colors.red,
+            ),
+            label: const Text(
+              "Login with Google",
+              style: TextStyle(fontSize: 16),
+            ),
+            style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                onPrimary: const Color(0xff243443),
+                fixedSize: const Size(240, 80))),
       ),
     );
   }
