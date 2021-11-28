@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:kaarva/home.dart';
 
+// ignore: camel_case_types
 class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
 
@@ -9,6 +9,7 @@ class loginPage extends StatefulWidget {
   _loginPageState createState() => _loginPageState();
 }
 
+// ignore: camel_case_types
 class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
@@ -18,11 +19,12 @@ class _loginPageState extends State<loginPage> {
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => homePage()));
+                context, MaterialPageRoute(builder: (_) => const homePage()));
           },
-          child: Text("Login with Google"),
+          child: const Text("Login with Google"),
           style: ElevatedButton.styleFrom(
-              primary: Color(0xff2DF6AE), onPrimary: Color(0xff243443)),
+              primary: const Color(0xff2DF6AE),
+              onPrimary: const Color(0xff243443)),
         ),
       ),
     );
