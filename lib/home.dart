@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaarva/provider/widgets/slider.dart';
 
 // ignore: camel_case_types
 class homePage extends StatefulWidget {
@@ -11,6 +12,8 @@ class homePage extends StatefulWidget {
 // ignore: camel_case_types
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
+
+  double _currentSliderValue = 0;
 
   final pages = [
     //Create Ride Page
@@ -38,6 +41,7 @@ class _homePageState extends State<homePage> {
               ),
             ),
             SizedBox(height: 16),
+            slider(),
           ],
         )),
     Scaffold(
@@ -52,10 +56,7 @@ class _homePageState extends State<homePage> {
         backgroundColor: const Color(0xff2DF6AE),
       ),
       body: const Center(
-        child: Text(
-          " Yo YO",
-          style: TextStyle(color: Color(0xff2DF6AE)),
-        ),
+        child: slider(),
       ),
     ),
   ];

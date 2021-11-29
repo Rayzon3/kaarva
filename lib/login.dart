@@ -21,11 +21,11 @@ class _loginPageState extends State<loginPage> {
       body: Center(
         child: ElevatedButton.icon(
             onPressed: () {
-              // Navigator.push(
-              //     context, MaterialPageRoute(builder: (_) => const homePage()));
-              final provider =
-                  Provider.of<GoogleSignInProvider>(context, listen: false);
-              provider.googleLogin();
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => const homePage()));
+              // final provider =
+              //     Provider.of<GoogleSignInProvider>(context, listen: false);
+              // provider.googleLogin();
             },
             icon: const FaIcon(
               FontAwesomeIcons.google,
