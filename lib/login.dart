@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kaarva/home.dart';
+import 'package:kaarva/provider/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 // ignore: camel_case_types
 class loginPage extends StatefulWidget {
@@ -19,8 +21,11 @@ class _loginPageState extends State<loginPage> {
       body: Center(
         child: ElevatedButton.icon(
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => const homePage()));
+              // Navigator.push(
+              //     context, MaterialPageRoute(builder: (_) => const homePage()));
+              final provider =
+                  Provider.of<GoogleSignInProvider>(context, listen: false);
+              provider.googleLogin();
             },
             icon: const FaIcon(
               FontAwesomeIcons.google,
