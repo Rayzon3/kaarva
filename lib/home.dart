@@ -31,6 +31,14 @@ class _homePageState extends State<homePage> {
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: const [
+            Text(
+              "When are you leaving (in mins)",
+              style: TextStyle(
+                  color: Color(0xff2DF6AE),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
             TextField(
               style: TextStyle(color: Color(0xff243443)),
               decoration: InputDecoration(
@@ -40,8 +48,23 @@ class _homePageState extends State<homePage> {
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 45),
+            Text(
+              "When are you leaving (in mins)",
+              style: TextStyle(
+                  color: Color(0xff2DF6AE),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
             slider(),
+            SizedBox(height: 200),
+            ElevatedButton(
+              onPressed: null,
+              child: Text("Submit"),
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xff2DF6AE),
+              ),
+            )
           ],
         )),
     Scaffold(
