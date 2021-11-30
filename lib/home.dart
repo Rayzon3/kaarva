@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kaarva/provider/widgets/card.dart';
-import 'package:kaarva/provider/widgets/slider.dart';
+import 'package:kaarva/widgets/card.dart';
+import 'package:kaarva/widgets/slider.dart';
 
 // ignore: camel_case_types
 class homePage extends StatefulWidget {
