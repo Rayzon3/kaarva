@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kaarva/provider/widgets/card.dart';
 import 'package:kaarva/provider/widgets/slider.dart';
 
 // ignore: camel_case_types
@@ -81,8 +82,14 @@ class _homePageState extends State<homePage> {
         ),
         backgroundColor: const Color(0xff2DF6AE),
       ),
-      body: const Center(
-        child: slider(),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          card(),
+          card(),
+          card(),
+          card(),
+        ],
       ),
     ),
   ];
