@@ -33,7 +33,7 @@ class _homePageState extends State<homePage> {
           padding: const EdgeInsets.all(16),
           children: [
             Text(
-              "When are you leaving (in mins)",
+              "Where are you going?",
               style: TextStyle(
                   color: Color(0xff2DF6AE),
                   fontSize: 16,
