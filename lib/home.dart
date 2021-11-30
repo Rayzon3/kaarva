@@ -30,7 +30,7 @@ class _homePageState extends State<homePage> {
         ),
         body: ListView(
           padding: const EdgeInsets.all(16),
-          children: const [
+          children: [
             Text(
               "When are you leaving (in mins)",
               style: TextStyle(
@@ -60,10 +60,13 @@ class _homePageState extends State<homePage> {
             SizedBox(height: 200),
             ElevatedButton(
               onPressed: null,
-              child: Text("Submit"),
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xff2DF6AE),
+              child: Text(
+                "Submit",
+                style: TextStyle(color: Colors.white),
               ),
+              style: ElevatedButton.styleFrom(
+                  primary: const Color(0xff2DF6AE),
+                  fixedSize: const Size(220, 80)),
             )
           ],
         )),
