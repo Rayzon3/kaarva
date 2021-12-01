@@ -23,7 +23,7 @@ class _cardState extends State<card> {
             ),
             const SizedBox(height: 4),
             Text(
-              "Will som from database.",
+              "Will come from database.",
               style: TextStyle(fontSize: 20),
             )
           ],

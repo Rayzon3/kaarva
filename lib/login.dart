@@ -18,14 +18,22 @@ class _loginPageState extends State<loginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff243443),
-      body: Center(
+      body: signUp(context),
+    );
+  }
+}
+
+Widget signUp(BuildContext context) {
+  return Column(
+    children: [
+      Center(
         child: ElevatedButton.icon(
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => const homePage()));
-              // final provider =
-              //     Provider.of<GoogleSignInProvider>(context, listen: false);
-              // provider.googleLogin();
+              // Navigator.push(
+              //     context, MaterialPageRoute(builder: (_) => const homePage()));
+              final provider =
+                  Provider.of<GoogleSignInProvider>(context, listen: false);
+              provider.googleLogin();
             },
             icon: const FaIcon(
               FontAwesomeIcons.google,
@@ -39,7 +47,7 @@ class _loginPageState extends State<loginPage> {
                 primary: Colors.white,
                 onPrimary: const Color(0xff243443),
                 fixedSize: const Size(240, 80))),
-      ),
-    );
-  }
+      )
+    ],
+  );
 }
