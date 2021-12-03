@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           title: 'Flutter App',
           theme: ThemeData(
               primarySwatch: Colors.teal, backgroundColor: Color(0xff243443)),
-          home: const LoginPage(),
+          home: const Splash(),
           debugShowCheckedModeBanner: false,
         ),
       );

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kaarva/widgets/card.dart';
 import 'package:kaarva/widgets/logout_button.dart';
@@ -21,15 +22,6 @@ class _homePageState extends State<homePage> {
     //Create Ride Page
     Scaffold(
         backgroundColor: const Color(0xff243443),
-        appBar: AppBar(
-          title: const Text(
-            "Create a Ride",
-            style: TextStyle(
-              color: Color(0xff243443),
-            ),
-          ),
-          backgroundColor: const Color(0xff2DF6AE),
-        ),
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
@@ -64,7 +56,7 @@ class _homePageState extends State<homePage> {
               onPressed: null,
               child: Text(
                 "Submit",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Color(0xff2DF6AE)),
               ),
               style: ElevatedButton.styleFrom(
                   primary: const Color(0xff2DF6AE),
@@ -74,15 +66,6 @@ class _homePageState extends State<homePage> {
         )),
     Scaffold(
       backgroundColor: const Color(0xff243443),
-      appBar: AppBar(
-        title: const Text(
-          "Find a Ride",
-          style: TextStyle(
-            color: Color(0xff243443),
-          ),
-        ),
-        backgroundColor: const Color(0xff2DF6AE),
-      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -97,11 +80,25 @@ class _homePageState extends State<homePage> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        actions: [logoutButton(context)],
-      ),
+          title: Text(
+            "Kaarva",
+            style: TextStyle(color: Color(0xff243443)),
+          ),
+          backgroundColor: Color(0xff2DF6AE),
+          actions: [
+            logoutButton(context),
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: CircleAvatar(
+                radius: 20,
+                backgroundImage: NetworkImage(user.photoURL!),
+              ),
+            )
+          ]),
       backgroundColor: const Color(0xff243443),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
