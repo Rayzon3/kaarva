@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kaarva/widgets/card.dart';
+import 'package:kaarva/widgets/logout_button.dart';
 import 'package:kaarva/widgets/slider.dart';
 
 // ignore: camel_case_types
@@ -97,6 +98,10 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        actions: [logoutButton(context)],
+      ),
       backgroundColor: const Color(0xff243443),
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(

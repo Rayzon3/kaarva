@@ -14,6 +14,7 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff243443),
       body: signUp(context),
     );
   }
@@ -21,6 +22,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
 Widget signUp(BuildContext context) {
   return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Center(
         child: ElevatedButton.icon(

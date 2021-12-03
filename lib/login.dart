@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: Color(0xff243443),
         body: StreamBuilder(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (
@@ -23,7 +24,8 @@ class LoginPage extends StatelessWidget {
                   child: CircularProgressIndicator(),
                 );
               } else if (snapshot.hasData) {
-                return LoggedInWidget();
+                //return LoggedInWidget();
+                return homePage();
               } else {
                 return SignUpPage();
               }

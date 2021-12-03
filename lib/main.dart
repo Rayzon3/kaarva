@@ -34,8 +34,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Flutter App',
           theme: ThemeData(
-            primarySwatch: Colors.teal,
-          ),
+              primarySwatch: Colors.teal, backgroundColor: Color(0xff243443)),
           home: const LoginPage(),
           debugShowCheckedModeBanner: false,
         ),
