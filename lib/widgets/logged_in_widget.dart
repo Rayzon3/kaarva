@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kaarva/provider/google_sign_in.dart';
+import 'package:kaarva/widgets/logout_button.dart';
 import 'package:provider/provider.dart';
 
 class LoggedInWidget extends StatelessWidget {
@@ -13,18 +14,7 @@ class LoggedInWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Logged In"),
-        actions: [
-          TextButton(
-              onPressed: () {
-                final provider =
-                    Provider.of<GoogleSignInProvider>(context, listen: false);
-                provider.logout();
-              },
-              child: Text(
-                "Logout",
-                style: TextStyle(color: Colors.black),
-              ))
-        ],
+        actions: [logoutButton(context)],
       ),
       body: Container(
         alignment: Alignment.center,
