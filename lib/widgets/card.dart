@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class card extends StatefulWidget {
@@ -8,6 +9,24 @@ class card extends StatefulWidget {
 }
 
 class _cardState extends State<card> {
+  String _destinationDetails = "Going to: ";
+  final _database = FirebaseDatabase.instance.reference();
+
+  void inistate() {
+    super.initState();
+    _activateListeners();
+  }
+
+  void _activateListeners() {
+    //fires when there is any data present or if data is updated
+    _database.child("rideDetails/destination").onValue.listen((event) {
+      final String details = event.snapshot.value;
+      setState(() {
+        _destinationDetails = 'Going to - $details';
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -22,10 +41,7 @@ class _cardState extends State<card> {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
-            Text(
-              "Will come from database.",
-              style: TextStyle(fontSize: 20),
-            )
+            Text(_destinationDetails),
           ],
         ),
       ),

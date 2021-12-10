@@ -20,7 +20,7 @@ class _homePageState extends State<homePage> {
 
   final user = FirebaseAuth.instance.currentUser!;
   static final database = FirebaseDatabase.instance.reference();
-  static final userRef = database.child('/rideDetails');
+  static final userRef = database.child('rideDetails');
 
   final pages = [
     //Create Ride Page
@@ -60,7 +60,7 @@ class _homePageState extends State<homePage> {
               onPressed: () async {
                 try {
                   await userRef.set(
-                      {'destination': 'sec-21,  gurgaon', 'leavingIn': '5'});
+                      {'destination': 'sec-23,  gurgaon', 'leavingIn': '5'});
                   print('Data written !!');
                 } catch (e) {
                   print("Error: $e");
@@ -80,12 +80,7 @@ class _homePageState extends State<homePage> {
       backgroundColor: const Color(0xff243443),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: [
-          card(),
-          card(),
-          card(),
-          card(),
-        ],
+        children: [const card()],
       ),
     ),
   ];
