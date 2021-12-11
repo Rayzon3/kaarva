@@ -16,11 +16,13 @@ class homePage extends StatefulWidget {
 // ignore: camel_case_types
 class _homePageState extends State<homePage> {
   int currentIndex = 0;
-  double _currentSliderValue = 0;
+  final double _currentSliderValue = 0;
 
   final user = FirebaseAuth.instance.currentUser!;
   static final database = FirebaseDatabase.instance.reference();
   static final userRef = database.child('rideDetails');
+
+  static TextEditingController _textEditingController = TextEditingController();
 
   final pages = [
     //Create Ride Page
@@ -38,6 +40,7 @@ class _homePageState extends State<homePage> {
             ),
             SizedBox(height: 16),
             TextField(
+              controller: _textEditingController,
               style: TextStyle(color: Color(0xff243443)),
               decoration: InputDecoration(
                 labelText: "Where to?",
@@ -59,8 +62,9 @@ class _homePageState extends State<homePage> {
             ElevatedButton(
               onPressed: () async {
                 try {
-                  await userRef.set(
-                      {'destination': 'sec-21, gurgaon', 'leavingIn': '5'});
+                  var data = _textEditingController.text;
+                  await userRef
+                      .set({'destination': data, 'leavingIn': currentValue});
                   print('Data written !!');
                 } catch (e) {
                   print("Error: $e");

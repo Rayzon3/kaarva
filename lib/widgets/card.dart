@@ -10,6 +10,7 @@ class card extends StatefulWidget {
 
 class _cardState extends State<card> {
   String _destinationDetails = "";
+  int time = 0;
   final _database = FirebaseDatabase.instance.reference();
 
   @override
@@ -24,7 +25,7 @@ class _cardState extends State<card> {
     _database.child("rideDetails/destination").onValue.listen((event) {
       final String details = event.snapshot.value;
       setState(() {
-        _destinationDetails = 'Going to - $details';
+        _destinationDetails = 'Going to : $details';
         print("set state");
       });
     });

@@ -7,18 +7,21 @@ class slider extends StatefulWidget {
   _sliderState createState() => _sliderState();
 }
 
-class _sliderState extends State<slider> {
-  double value = 5;
+double value = 5;
+double currentValue = 0;
 
+class _sliderState extends State<slider> {
   @override
   Widget build(BuildContext context) {
+    currentValue = value;
+
     return Slider(
       value: value,
       min: 5,
       max: 30,
       divisions: 5,
       label: value.round().toString(),
-      onChanged: (value) => setState(() => this.value = value),
+      onChanged: (newValue) => setState(() => value = newValue),
     );
   }
 }
