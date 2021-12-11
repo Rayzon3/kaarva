@@ -63,8 +63,10 @@ class _homePageState extends State<homePage> {
               onPressed: () async {
                 try {
                   var data = _textEditingController.text;
-                  await userRef
-                      .set({'destination': data, 'leavingIn': currentValue});
+                  await userRef.set({
+                    'destination': data,
+                    'leavingIn': currentValue.toInt().toString(),
+                  });
                   print('Data written !!');
                 } catch (e) {
                   print("Error: $e");

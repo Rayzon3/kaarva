@@ -10,22 +10,33 @@ class card extends StatefulWidget {
 
 class _cardState extends State<card> {
   String _destinationDetails = "";
-  int time = 0;
+  String _time = "";
   final _database = FirebaseDatabase.instance.reference();
 
   @override
   void initState() {
     super.initState();
     _activateListeners();
+    _timeListener();
     print("i am initState");
   }
 
   void _activateListeners() {
     //fires when there is any data present or if data is updated
-    _database.child("rideDetails/destination").onValue.listen((event) {
+    _database.child("rideDetails/destination/").onValue.listen((event) {
       final String details = event.snapshot.value;
       setState(() {
         _destinationDetails = 'Going to : $details';
+        print("set state");
+      });
+    });
+  }
+
+  void _timeListener() {
+    _database.child("rideDetails/leavingIn").onValue.listen((event) {
+      final String details = event.snapshot.value;
+      setState(() {
+        _time = 'Leaving in : $details mins';
         print("set state");
       });
     });
@@ -46,6 +57,7 @@ class _cardState extends State<card> {
             ),
             const SizedBox(height: 4),
             Text(_destinationDetails),
+            Text(_time),
           ],
         ),
       ),
