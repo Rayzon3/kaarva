@@ -60,7 +60,7 @@ class _homePageState extends State<homePage> {
               onPressed: () async {
                 try {
                   await userRef.set(
-                      {'destination': 'sec-23,  gurgaon', 'leavingIn': '5'});
+                      {'destination': 'sec-21, gurgaon', 'leavingIn': '5'});
                   print('Data written !!');
                 } catch (e) {
                   print("Error: $e");
@@ -80,7 +80,7 @@ class _homePageState extends State<homePage> {
       backgroundColor: const Color(0xff243443),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: [const card()],
+        children: [card()],
       ),
     ),
   ];

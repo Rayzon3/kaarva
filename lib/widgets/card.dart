@@ -9,12 +9,14 @@ class card extends StatefulWidget {
 }
 
 class _cardState extends State<card> {
-  String _destinationDetails = "Going to: ";
+  String _destinationDetails = "";
   final _database = FirebaseDatabase.instance.reference();
 
-  void inistate() {
+  @override
+  void initState() {
     super.initState();
     _activateListeners();
+    print("i am initState");
   }
 
   void _activateListeners() {
@@ -23,6 +25,7 @@ class _cardState extends State<card> {
       final String details = event.snapshot.value;
       setState(() {
         _destinationDetails = 'Going to - $details';
+        print("set state");
       });
     });
   }
