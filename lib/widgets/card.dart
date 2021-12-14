@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ class _cardState extends State<card> {
   String _destinationDetails = "";
   String _time = "";
   final _database = FirebaseDatabase.instance.reference();
+  final user = FirebaseAuth.instance.currentUser!;
 
   @override
   void initState() {
@@ -26,7 +28,7 @@ class _cardState extends State<card> {
     _database.child("rideDetails/destination/").onValue.listen((event) {
       final String details = event.snapshot.value;
       setState(() {
-        _destinationDetails = 'Going to : $details';
+        _destinationDetails = 'Going To : $details';
         print("set state");
       });
     });
@@ -36,7 +38,7 @@ class _cardState extends State<card> {
     _database.child("rideDetails/leavingIn").onValue.listen((event) {
       final String details = event.snapshot.value;
       setState(() {
-        _time = 'Leaving in : $details mins';
+        _time = 'Leaving In : $details mins';
         print("set state");
       });
     });
@@ -52,12 +54,22 @@ class _cardState extends State<card> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Ride Details",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              "Ride Details Of",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              user.displayName!,
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 4),
-            Text(_destinationDetails),
-            Text(_time),
+            Text(
+              _destinationDetails,
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(
+              _time,
+              style: TextStyle(fontSize: 20),
+            ),
           ],
         ),
       ),
