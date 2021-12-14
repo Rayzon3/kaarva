@@ -24,6 +24,12 @@ class _homePageState extends State<homePage> {
 
   static TextEditingController _textEditingController = TextEditingController();
 
+  void initState() {
+    super.initState();
+
+    print("i am initState");
+  }
+
   final pages = [
     //Create Ride Page
     Scaffold(
@@ -86,7 +92,15 @@ class _homePageState extends State<homePage> {
       backgroundColor: const Color(0xff243443),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: [card()],
+        children: [
+          Dismissible(
+            child: card(),
+            key: ValueKey("Deleted"),
+            onDismissed: (direction) {
+              userRef.remove();
+            },
+          )
+        ],
       ),
     ),
   ];
