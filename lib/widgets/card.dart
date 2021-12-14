@@ -61,14 +61,14 @@ class _cardState extends State<card> {
               user.displayName!,
               style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 6),
             Text(
               _destinationDetails,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 18),
             ),
             Text(
               _time,
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),
